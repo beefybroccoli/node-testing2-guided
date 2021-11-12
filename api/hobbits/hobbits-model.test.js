@@ -64,7 +64,7 @@ describe( 'Hobbit Model', ()=>{
 
     describe('getById()', ()=>{
 
-        let data ;
+        let data;
 
         beforeEach( async ()=>{
             data = await modelHobbit.getById('1');
