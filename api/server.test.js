@@ -44,3 +44,7 @@ describe ('[GET] /hobbits/:id', ()=>{
         expect(res.status).toEqual(404);
     })
 })
+
+describe('[POST] /hobbits/', ()=>{
+    
+})
