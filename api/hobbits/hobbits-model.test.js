@@ -8,8 +8,10 @@ test('is testing environment', ()=>{
 })
 
 beforeAll(async()=>{
-    await db.migrate.rollback(); //???refer to docs for this command???
-    await db.migrate.latest(); //???refer to docs for this command???
+    //???refer to docs for this command???
+    await db.migrate.rollback(); 
+    //???refer to docs for this command???
+    await db.migrate.latest();
 })
 
 beforeEach(async()=>{
