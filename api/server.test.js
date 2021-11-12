@@ -33,3 +33,14 @@ describe('[GET] /hobbits', ()=>{
         expect(res.status).toEqual(404);
     })
 })
+
+describe ('[GET] /hobbits/:id', ()=>{
+    test('responds with 200 status code', async ()=>{
+        const res = await request(server).get('/hobbits/2');
+        expect(res.status).toEqual(200);
+    })
+    test('responds with 404 status code', async ()=>{
+        const res = await request(server).get('/hobbitss/1');
+        expect(res.status).toEqual(404);
+    })
+})
