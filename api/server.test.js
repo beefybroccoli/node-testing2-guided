@@ -18,9 +18,7 @@ afterAll(async()=>{
 })
 
 describe('sanity check', ()=>{
-    test('', ()=>{
-
-    })
+    test('sanity check', ()=>{ })
 })
 
 describe('[GET] /hobbits', ()=>{
