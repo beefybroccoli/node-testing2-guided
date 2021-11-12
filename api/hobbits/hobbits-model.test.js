@@ -56,15 +56,26 @@ describe( 'Hobbit Model', ()=>{
                     "id": 4,
                     "name": "merry"
                 }
-            ]
-            
+            ]            
           )  
         })
         
     })
 
     describe('getById()', ()=>{
-        test('', ()=>{})
+
+        let data ;
+
+        beforeEach( async ()=>{
+            data = await modelHobbit.getById('1');
+        })
+
+        test('resolve first hobbit', ()=>{
+            expect(data).toMatchObject({
+                "id": 1,
+                "name": "sam"
+            });
+        })
     })
 
     describe('insert()', ()=>{
