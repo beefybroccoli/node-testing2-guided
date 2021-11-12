@@ -22,23 +22,57 @@ afterAll(async()=>{
     await db.destroy(); //disconnect from a database
 })
 
-describe('getAll()', ()=>{
+describe( 'Hobbit Model', ()=>{
 
-    test('resolve all hobbits in the db', async ()=>{
-        const data = await modelHobbit.getAll();
-        expect(data).toHaveLength(4);
+    describe('getAll()', ()=>{
+
+        let data;
+
+        beforeEach( async ()=>{
+            data = await modelHobbit.getAll();
+        })
+
+        test('resolve all hobbits in the db', async ()=>{
+            const data = await modelHobbit.getAll();
+            expect(data).toHaveLength(4);
+        })
+
+        test('resolve the correct shapes', async () =>{
+          expect(data).toMatchObject(
+            [
+                {
+                    "id": 1,
+                    "name": "sam"
+                },
+                {
+                    "id": 2,
+                    "name": "frodo"
+                },
+                {
+                    "id": 3,
+                    "name": "pippin"
+                },
+                {
+                    "id": 4,
+                    "name": "merry"
+                }
+            ]
+            
+          )  
+        })
+        
     })
-    
-})
 
-describe('getById()', ()=>{
-    test('', ()=>{})
-})
+    describe('getById()', ()=>{
+        test('', ()=>{})
+    })
 
-describe('insert()', ()=>{
-    test('', ()=>{})
-})
+    describe('insert()', ()=>{
+        test('', ()=>{})
+    })
 
-describe('update()', ()=>{
-    test('', ()=>{})
+    describe('update()', ()=>{
+        test('', ()=>{})
+    })
+
 })
