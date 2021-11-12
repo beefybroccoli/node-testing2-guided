@@ -30,13 +30,13 @@ describe('getAll()', ()=>{
 })
 
 describe('getById()', ()=>{
-    
+    test('', ()=>{})
 })
 
-describe('insert', ()=>{
-
+describe('insert()', ()=>{
+    test('', ()=>{})
 })
 
 describe('update()', ()=>{
-
+    test('', ()=>{})
 })
