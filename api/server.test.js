@@ -36,8 +36,12 @@ describe('[GET] /hobbits', ()=>{
 
 describe ('[GET] /hobbits/:id', ()=>{
     test('responds with 200 status code', async ()=>{
-        const res = await request(server).get('/hobbits/2');
+        const res = await request(server).get('/hobbits/1');
         expect(res.status).toEqual(200);
+        expect(res.body).toMatchObject({
+            "id": 1,
+            "name": "sam"
+        });
     })
     test('responds with 404 status code', async ()=>{
         const res = await request(server).get('/hobbitss/1');
@@ -46,5 +50,18 @@ describe ('[GET] /hobbits/:id', ()=>{
 })
 
 describe('[POST] /hobbits/', ()=>{
-    
+    test('responds with 201 status code', async () =>{
+        const res = await request(server).post('/hobbits/')
+            .send({name:"tomtom"});
+        const newId = res.body[0];
+        const newHobbit = await request(server).get('/hobbits/5');
+        expect(res.status).toEqual(201);
+        expect(newId).toEqual(5);
+        expect(newHobbit.status).toEqual(200);
+        expect(newHobbit.body).toMatchObject({
+            "id": 5,
+            "name": "tomtom"
+        });
+    })
+
 })
