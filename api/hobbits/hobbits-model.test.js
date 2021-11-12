@@ -1,5 +1,5 @@
 const { testing } = require("../../knexfile");
-const modelHobit = require("./hobbits-model");
+const modelHobbit = require("./hobbits-model");
 const db = require("../../data/dbConfig");
 
 //sanity test
@@ -8,8 +8,8 @@ test('is testing environment', ()=>{
 })
 
 beforeAll(async()=>{
-    await db.migrate.rollback();
-    await db.migrate.latest();
+    await db.migrate.rollback(); //???refer to docs for this command???
+    await db.migrate.latest(); //???refer to docs for this command???
 })
 
 beforeEach(async()=>{
@@ -18,4 +18,25 @@ beforeEach(async()=>{
 
 afterAll(async()=>{
     await db.destroy(); //disconnect from a database
+})
+
+describe('getAll()', ()=>{
+
+    test('resolve all hobbits in the db', async ()=>{
+        const data = await modelHobbit.getAll();
+        expect(data).toHaveLength(4);
+    })
+    
+})
+
+describe('getById()', ()=>{
+    
+})
+
+describe('insert', ()=>{
+
+})
+
+describe('update()', ()=>{
+
 })
