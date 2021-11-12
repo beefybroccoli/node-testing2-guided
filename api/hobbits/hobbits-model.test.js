@@ -58,8 +58,7 @@ describe( 'Hobbit Model', ()=>{
                 }
             ]            
           )  
-        })
-        
+        })  
     })
 
     describe('getById()', ()=>{
